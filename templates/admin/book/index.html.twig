@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EtatController!{% endblock %}
+
+{% block body %}
+{# templates/employer/list.html.twig #}
+<section class="px-4">
+<div class="container gy-5 mt-5">
+
+<h1 class="align-text-center">Liste des Employeurs</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Isbn</th>
+            <th>Cover</th>
+			<th>Éditer le </th>
+			<th>Plot</th>
+			<th>Status</th>
+			<th>Page Number</th>
+			<th>Authors</th>
+			<th>Éditor</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.cover }}</td>
+				<td>{{{ book.editedAt }}}</td>
+				<td>{{{ book.plot }}}</td>
+				<td>{{{ book.status }}}</td>
+				<td>{{{ book.pageNumber }}}</td>
+				<td>{{{ book.authors }}}</td>
+				<td>{{{ book.editor }}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{# Bouton pour envoyer l'état #}
+{#<a href="{{ path('admin_envoyer_etat') }}" class="btn btn-primary">Envoyer l'état</a>#}
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'auteur{% endblock %}
+
+{% block body %}
+    <section class="px-4">
+	 <div class="w-50 m-auto mt-5">
+        <h1 class="text-center">Ajout d'auteur</h1>
+        
+        {{ form_start(form) }}
+        {{ form_row(form.name, {label: 'Name'}) }}
+		 {{ form_row(form.dateOfBirth, {label: 'Birthday'}) }}
+		  {{ form_row(form.dateOfDeath, {label: 'Date of death'}) }}
+		   {{ form_row(form.nationality, {label: 'Nationality'}) }}
+		    {{ form_row(form.books, {label: 'Books'}) }}
+			 <button type="submit" class="btn btn-primary">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+	</section>
+{% endblock %}
